@@ -1,0 +1,166 @@
+body{
+    background-color: #6e89a5;
+    
+
+}
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+    margin: 0;
+    /* background-color: rgb(181, 39, 68); */
+    background-image: url("background.jpg");
+  }
+
+.slider-container {
+    width: 410px; 
+    overflow: hidden; 
+    position: relative;
+  }
+
+  
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+  }
+.slide {
+    width: 410px;
+    flex-shrink: 0; 
+    height: calc(410px * 16 / 9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+  }
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+  }
+
+.prev-btn {
+    left: 10px;
+  }
+
+.next-btn {
+    right: 10px;
+  }
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(79, 5, 57, 0.8);
+  }
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+.control-buttons button,
+.control-buttons select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #adb757;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+.control-buttons button:hover,
+.control-buttons select:hover {
+    background-color: #ffffff;
+  }
+
+.movable-text {
+    position: absolute;
+    cursor: grab;
+    color: rgb(2, 2, 2);
+  }
+
+.movable-text:active {
+    cursor: grabbing;
+  }
+
+.slideimg{
+    width: 410px;
+    height: calc(410px * 16 / 9); 
+  }
+
+  .draggable-text:focus {
+    outline: none; }
+
+
+.slide.dragging {
+  opacity: 0.5;
+  border: 2px dashed #000;
+}
+
+.slide.drop-target {
+  outline: 3px dashed #818e0f;
+  outline-offset: -10px;
+}
+
+.slide-list-panel {
+  width: 150px;
+  background-color:lightslategrey;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#slide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#slide-list li {
+  padding: 10px;
+  background-color: lightslategrey;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  cursor: grab;
+  transition: background-color 0.3s;
+}
+
+#slide-list li.dragging {
+  opacity: 0.5;
+  background-color: #12658f;
+}
+
+#slide-list li:hover {
+  background-color: lightgreen;
+}
+
+#saveButton{
+  position: absolute;
+  top: 20px; 
+  right: 50px;
+  padding: 10px 20px;
+  background-color: rgb(231, 41, 41);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+#saveButton:active{
+  background-color: rgb(12, 223, 12);
+}

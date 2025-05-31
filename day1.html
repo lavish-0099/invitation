@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-card</title>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+    <div class="main-container">
+        <button id="saveButton" >
+            Save
+        </button>
+        <div class="slide-list-panel">
+            <ul id="slide-list">
+                <li draggable="true">Slide 1</li>
+                <li draggable="true">Slide 2</li>
+                <li draggable="true">Slide 3</li>
+            </ul>
+        </div>
+          
+        <div class="slider-container">
+            <div class="slider">
+            <div class="slide" >
+                <img class="slideimg" src="slide1.jpg" > 
+
+            </div>
+            <div class="slide">
+                <img class="slideimg" src="slide2.png">
+
+            </div>
+            <div class="slide" >
+                <img class="slideimg" src="slide3.jpg">
+            </div>
+            </div>
+        
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
+        <div class="control-buttons">
+            <button id="add-text-btn">Add Text</button>            
+            <select id="font-size-dropdown">
+                <option value="" disabled selected>Font Size</option>
+                <option value="12px">12px</option>
+                <option value="16px">16px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+                <option value="30px">30px</option>
+              </select>
+              
+            <button id="change-font-btn">Change Font</button>
+            <button id="change-color-btn">Change Color</button>
+        </div>
+        
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+    <script src="script1.js"></script>
+<script>
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBauOCQNGCCLQBZopYIc852rrBgUft4ozI",
+    authDomain: "day-1-af77a.firebaseapp.com",
+    projectId: "day-1-af77a",
+    storageBucket: "day-1-af77a.firebasestorage.app",
+    messagingSenderId: "985402860107",
+    appId: "1:985402860107:web:bd37c14e510216f612a3ce",
+    measurementId: "G-RB37K5KGW7"
+  };
+
+  
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+
+  async function saveExampleData() {
+    try {
+      await db.collection("exampleCollection").doc("exampleDoc").set({
+        key: "value",
+      });
+      console.log("Data saved successfully!");
+    } catch (error) {
+      console.error("Error saving data: ", error);
+    }
+  }
+</script>
+
+   
+</body>
+</html>
